@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* MEDOS Colors */
+  --color-medos-bg: #050505;
+  --color-medos-panel: #0a0a0c;
+  --color-medos-border: #1f2937;
+  
+  --color-neon-cyan: #00f0ff;
+  --color-neon-cyan-muted: rgba(0, 240, 255, 0.2);
+  
+  --color-emerald-main: #00ff88;
+  --color-emerald-muted: rgba(0, 255, 136, 0.2);
+  
+  --color-crimson-main: #ff003c;
+  --color-crimson-muted: rgba(255, 0, 60, 0.2);
+  
+  --color-amber-main: #ffb000;
+  --color-amber-muted: rgba(255, 176, 0, 0.2);
+
+  --color-slate-text: #94a3b8;
+  --color-slate-light: #cbd5e1;
+}
+
+@layer base {
+  body {
+    @apply bg-medos-bg text-slate-light font-sans antialiased overflow-hidden selection:bg-neon-cyan selection:text-black;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-medos-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-cyan);
+}
+
+.panel-container {
+  @apply bg-medos-panel border border-medos-border rounded-lg shadow-2xl overflow-hidden relative;
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.neon-glow-crimson {
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.7);
+}
+
+.neon-glow-emerald {
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.subgrid {
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
